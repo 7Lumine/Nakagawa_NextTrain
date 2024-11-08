@@ -151,18 +151,18 @@ function handleTimetableType(element) {
     switch (TimetableType) {
         case 'holiday_azamino':
             console.log('holiday_azamino');
-            return './timetables/nakagawa_holiday_azamino.csv';
+            return '../timetables/nakagawa_holiday_azamino.csv';
         case 'azamino':
         case 'weekday_azamino':
             console.log('weekday_azamino');
-            return './timetables/nakagawa_weekday_azamino.csv';
+            return '../timetables/nakagawa_weekday_azamino.csv';
         case 'others':
         case 'weekday_others':
             console.log('weekday_others');
-            return './timetables/nakagawa_weekday_others.csv';
+            return '../timetables/nakagawa_weekday_others.csv';
         case 'holiday_others':
             console.log('holiday_others');
-            return './timetables/nakagawa_holiday_others.csv';
+            return '../timetables/nakagawa_holiday_others.csv';
         default:
             console.error('未知のタイムテーブルタイプ:', TimetableType);
             return undefined;
