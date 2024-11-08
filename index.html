@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>電車時刻表</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="datetime-display">
+        <div class="current-time"></div>
+        <div class="current-date"></div>
+        <div class="dia"></div>
+    </div>
+    <div class="container">
+        <div class="direction-board">
+            <a href="/ttAzamino" class="direction-header">
+                <div class="direction-title">あざみ野方面</div>
+                <div class="arrow">→</div>
+            </a>
+            <div id="azamino-trains"></div>
+        </div>
+
+        <div class="direction-board">
+            <a href="/ttYokohama" class="direction-header">
+                <div class="direction-title">横浜・湘南台方面</div>
+                <div class="arrow">→</div>
+            </a>
+            <div id="others-trains"></div>
+        </div>
+    </div>
+    <script src="./isHoliday/holiday_jp.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    padding: 16px;
+    background-color: #f5f5f5;
+    color: #2c3e50;
+}
+
+/* 時刻表示部分 */
+.datetime-display {
+    text-align: center;
+    margin-bottom: 20px;
+    background: white;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.current-time {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.current-date, .dia {
+    font-size: 16px;
+    color: #666;
+    margin-top: 4px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.direction-board {
+    background: white;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+/* 電車情報 */
+.train-info {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 8px;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.train-info:last-child {
+    border-bottom: none;
+}
+
+.train-info div {
+    font-size: 16px;
+}
+
+/* 発車時刻5分未満の場合の赤文字表示 */
+.train-info[data-minutes-left="0"] div,
+.train-info[data-minutes-left="1"] div,
+.train-info[data-minutes-left="2"] div,
+.train-info[data-minutes-left="3"] div,
+.train-info[data-minutes-left="4"] div {
+    color: #ff3333;
+}
+
+
+.direction-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 12px;
+}
+
+.direction-header:hover {
+    background-color: #f5f5f5;
+}
+.direction-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+.arrow {
+    font-size: 1.2em;
+    color: #2c3e50;
+}
+

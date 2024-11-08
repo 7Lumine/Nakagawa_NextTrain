@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>横浜・湘南台方面 時刻表</title>
+    <link rel="stylesheet" href="../showTimetable.css">
+</head>
+<body>
+    <div class="header-container">
+        <a href="../" class="back-button">← 戻る</a>
+        <div class="toggle-buttons">
+          <button id="weekdayButton" class="toggle-button active">平日</button>
+          <button id="holidayButton" class="toggle-button">休日</button>
+        </div>
+      </div>
+      <h1>横浜・湘南台方面 時刻表</h1>
+    <div id="timetable" data-type="others"></div>
+    <div id="train-info"></div>
+</body>
+
+<script src="../isHoliday/holiday_jp.js"></script>
+<script src="../showTimetable.js"></script>
+</html>

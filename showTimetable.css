@@ -1,0 +1,221 @@
+:root {
+    --color-primary: #2c3e50;
+    --color-secondary: #e74c3c;
+    --color-accent: #3498db;
+    --color-background: #ffffff;
+    --color-border: #e0e0e0;
+    --color-light-bg: #f8f9fa;
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.5rem;
+    --transition-speed: 0.3s;
+}
+
+/* 基本スタイル */
+body {
+    margin: 0;
+    padding-top: 40px; /* ヘッダーの高さ分を確保 */
+    padding: 12px;
+    background: var(--color-background);
+    font-family: var(--font-family);
+}
+
+/* ヘッダー */
+h1 {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    margin-bottom: 24px;
+    padding: 8px 0;
+    border-bottom: 2px solid var(--color-primary);
+    color: var(--color-primary);
+}
+
+/* ヘッダーコンテナ */
+.header-container {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 16px;
+    background-color: var(--color-background);
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* 戻るボタン */
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #2c3e50;
+    font-size: 14px;
+    padding: 8px 16px;
+    border: 1px solid #2c3e50;
+    border-radius: 4px;
+    height: 20px;
+    white-space: nowrap;
+}
+
+/* トグルボタンコンテナ */
+.toggle-buttons {
+    display: flex;
+    border: 1px solid var(--color-primary);
+    border-radius: 4px;
+    overflow: hidden;
+    height: 36px;
+}
+
+/* トグルボタン */
+.toggle-button {
+    padding: 8px 16px;
+    border: none;
+    background: var(--color-background);
+    color: var(--color-primary);
+    height: 100%;
+    min-width: 80px;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+}
+
+.toggle-button.active {
+    background: var(--color-primary);
+    color: var(--color-background);
+}
+
+.toggle-button:not(:last-child) {
+    border-right: 1px solid var(--color-primary);
+}
+
+/* 現在時刻ボタン */
+.current-time-button {
+    padding: 8px 16px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background var(--transition-speed) ease;
+}
+
+.current-time-button:hover {
+    background: #2980b9;
+}
+
+/* 時刻表コンテナ */
+#timetable {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* 各電車情報 */
+.train-info {
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* 時刻のスタイル */
+.train-info div {
+    display: flex;
+    align-items: center;
+    font-size: var(--font-size-lg);
+    line-height: 1.4;
+}
+
+/* 時刻文字の強調 */
+.train-info div time {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-right: 8px;
+}
+
+/* 種別表示 */
+.train-info div .type {
+    margin-left: auto;
+    font-size: var(--font-size-base);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.train-info div .type.rapid {
+    background-color: var(--color-secondary);
+    color: var(--color-background);
+}
+
+.train-info div .type.local {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+}
+
+/* セパレーター */
+.time-separator {
+    text-align: center;
+    padding: 12px;
+    margin: 16px 0;
+    background: var(--color-light-bg);
+    border-radius: 4px;
+    color: var(--color-primary);
+    font-weight: bold;
+    border: 1px solid var(--color-border);
+}
+
+/* スクロールトップボタン */
+.scroll-top-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: var(--color-primary);
+    color: var(--color-background);
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-speed) ease, visibility var(--transition-speed) ease, transform var(--transition-speed) ease, background var(--transition-speed) ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.scroll-top-button:hover {
+    background: #34495e;
+    transform: translateY(-2px);
+}
+
+.scroll-top-button.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 768px) {
+    .scroll-top-button {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container {
+        gap: 8px;
+    }
+    
+    .toggle-button {
+        padding: 8px 12px;
+        min-width: 60px;
+    }
+}
